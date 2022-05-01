@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shelf"
+    tools:context=".launchScreen">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="130dp"
+            android:layout_height="158dp"
+            android:layout_gravity="center"
+            android:src="@drawable/logo" />
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:elevation="4dp"
+            android:gravity="center"
+            android:shadowColor="@color/black"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            android:text="@string/name"
+            android:fontFamily="cursive"
+            android:textColor="@color/white"
+            android:textSize="48sp"
+            android:textStyle="bold">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/slogan"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:elevation="4dp"
+            android:gravity="center"
+            android:shadowColor="@color/black"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            android:text="@string/slogan"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:textStyle="bold">
+
+        </TextView>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="80dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/btnLaunchSignUp"
+            android:padding="15dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/blue_light"
+            android:elevation="8dp"
+            android:shadowColor="@color/black"
+            android:text="@string/signUp"
+            android:textColor="@color/white"
+            app:cornerRadius="4dp">
+
+        </Button>
+
+        <Button
+            android:id="@+id/btnLaunchSignIn"
+            android:padding="15dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/blue_normal"
+            android:elevation="8dp"
+            android:shadowColor="@color/black"
+            android:text="@string/signIn"
+            android:textColor="@color/white"
+            app:cornerRadius="4dp">
+        </Button>
+
+    </LinearLayout>
+
+</RelativeLayout>

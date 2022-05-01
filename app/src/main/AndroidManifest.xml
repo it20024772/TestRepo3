@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.datapirates">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.DataPirates">
+        <activity
+            android:name=".signUp"
+            android:exported="false"
+            android:theme="@style/launch"/>
+        <activity
+            android:name=".signIn"
+            android:exported="false"
+            android:theme="@style/launch"/>
+        <activity
+            android:name=".reviewUpdate"
+            android:exported="false" />
+        <activity
+            android:name=".reviewShow"
+            android:exported="false" />
+        <activity
+            android:name=".reviewAdd"
+            android:exported="false" />
+        <activity
+            android:name=".profile"
+            android:exported="false"
+            android:theme="@style/launch"/>
+        <activity
+            android:name=".progressShow"
+            android:exported="false" />
+        <activity
+            android:name=".progressAdd"
+            android:exported="false" />
+        <activity
+            android:name=".Dashboard"
+            android:exported="false" />
+        <activity
+            android:name=".calcReadingTime"
+            android:exported="false" />
+        <activity
+            android:name=".goalShow"
+            android:exported="false" />
+        <activity
+            android:name=".goalAdd"
+            android:exported="false" />
+        <activity
+            android:name=".calcReadingLevel"
+            android:exported="false" />
+        <activity
+            android:name=".launchScreen"
+            android:exported="false"
+            android:theme="@style/launch"/>
+        <activity
+            android:name=".readingListUpdate"
+            android:exported="false" />
+        <activity
+            android:name=".readingListShow"
+            android:exported="false" />
+        <activity
+            android:name=".readingListAdd"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <receiver android:name=".reminderBroadcast" />
+    </application>
+
+</manifest>

@@ -1,0 +1,86 @@
+<resources>
+    <string name="app_name">Data pirates</string>
+
+    <!-- Launch Screen -->
+    <string name="name">Bookworm</string>
+    <string name="slogan">Build your reading habit wherever you are</string>
+
+    <!-- Dashboard -->
+    <string name="Dashboard">Dashboard</string>
+    <string name="ReadingList">Reading List</string>
+    <string name="DailyGoal">Daily Goal</string>
+    <string name="Progress">Progress</string>
+    <string name="Reviews">Reviews</string>
+    <string name="ReadingLevel">Reading Level</string>
+    <string name="ReadingSpeed">Reading Time</string>
+    <string name="ProfileIcon">Profile icon</string>
+
+    <!-- Reading List -->
+    <string name="addNewBook">Add New Book</string>
+    <string name="updateBookDetails">Update Book Details</string>
+    <string name="bookTitle">Book Title</string>
+    <string name="author">Author</string>
+    <string name="genre">Genre</string>
+    <string name="fantasy">Fantasy</string>
+    <string name="sciencefiction">Science Fiction</string>
+    <string name="romance">Romance</string>
+    <string name="mystery">Mystery</string>
+    <string name="horror">Horror</string>
+    <string name="nonfiction">Non-Fiction</string>
+
+    <!-- reading level -->
+    <string name="calcReadingLevel">Calculate Reading Level</string>
+    <string name="enterSentences">Enter several sentences from the book</string>
+    <string name="calculate">Calculate</string>
+    <string name="levelPlaceHolder">Grade 1</string>
+
+    <!-- Daily Goal -->
+    <string name="addDailyGoal">Add Daily Goal</string>
+    <string name="bookName">Book Name</string>
+    <string name="duration">Duration</string>
+    <string name="startTime">Start Time</string>
+    <string name="setTime">Set Time</string>
+    <string name="dailyGoal">Daily Goal</string>
+    <string name="sendReminder">Send Reminder</string>
+    <string name="hours_goal">Hours</string>
+
+    <!-- reading time -->
+    <string name="readingSpeedTitle">Calculate how long it will take you to read a book</string>
+    <string name="instructions">Instructions: Read a few pages of the book and record the time taken to read.</string>
+    <string name="hintNoOfPages">Number of pages read</string>
+    <string name="hintTimeTaken">Time Taken (minutes)</string>
+    <string name="hintTotalPages">Total no. of pages in the book</string>
+    <string name="txtTimeTaken">Time taken to complete the book:</string>
+    <string name="hours">hours and</string>
+    <string name="minutes">minutes</string>
+    <string name="HandMplaceholder">0</string>
+
+    <!-- Progress -->
+    <string name="addProgress">Add Book Reading Progress</string>
+    <string name="totalPages">Total number of pages</string>
+    <string name="currentPage">Current Page</string>
+    <string name="readingProgress">Reading Progress</string>
+    <string name="percentSign">%</string>
+
+    <!-- profile -->
+    <string name="logout">log out</string>
+
+    <!-- Review -->
+    <string name="addReview">Add Review</string>
+    <string name="updateReview">Update Review</string>
+    <string name="description">Description</string>
+    <string name="rating">Rating</string>
+
+    <!-- Sign in, Sign up -->
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="signIn">Sign In</string>
+    <string name="signUp">Sign Up</string>
+    <string name="underlinedSignIn"><u>Sign In</u></string>
+    <string name="underlinedSignUp"><u>Sign Up</u></string>
+    <string name="username">Username</string>
+    <string name="password_constraint">Password should be longer than 8 characters</string>
+    <string name="gotosignup">Don\'t have an account?</string>
+    <string name="gotosignin">Already have an account?</string>
+
+</resources>
