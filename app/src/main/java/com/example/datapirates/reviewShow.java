@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.datapirates.model.Review;
@@ -36,6 +37,7 @@ public class reviewShow extends AppCompatActivity {
     private ArrayList<Review> list;
     private ImageView backArrow;
     private ProgressDialog dialog;
+    private TextView avgRatingtxt;
 
     private DatabaseReference databaseReference;
     private FirebaseAuth auth;
@@ -60,6 +62,7 @@ public class reviewShow extends AppCompatActivity {
 
         addbtn = findViewById(R.id.addReviewBtn);
         backArrow = findViewById(R.id.backArrow);
+        avgRatingtxt = findViewById(R.id.avgRatingtxt);
 
         addbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,13 +141,21 @@ public class reviewShow extends AppCompatActivity {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                int count = 0;
+                float avgRate = 0;
+                float totRate = 0;
 
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
                     Review review = dataSnapshot.getValue(Review.class);
                     review.setReviewId(dataSnapshot.getKey());
 
                     list.add(review);
+                    totRate += Float.parseFloat(review.getRating());
+                    count += 1;
                 }
+
+                avgRate = totRate / count;
+                avgRatingtxt.setText(Float.toString(avgRate));
 
                 reviewListAdapter.notifyDataSetChanged();
                 dialog.hide();

@@ -70,6 +70,8 @@
     <string name="updateReview">Update Review</string>
     <string name="description">Description</string>
     <string name="rating">Rating</string>
+    <string name="avgrating">Average Rating:</string>
+
 
     <!-- Sign in, Sign up -->
     <string name="email">Email</string>
