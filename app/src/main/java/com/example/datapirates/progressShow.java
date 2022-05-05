@@ -102,7 +102,7 @@ public class progressShow extends AppCompatActivity {
                     currentPage.setText(String.valueOf(savedCurrentPage));
                     currentPage.setEnabled(false);
 
-                    int progressPercentage = Math.round(((float)savedCurrentPage / savedTotalPages) * 100);
+                    int progressPercentage = calcPercentage(savedCurrentPage,savedTotalPages);
 
                     progressBar.setProgress(progressPercentage);
                     progressPercentTxt.setText(String.valueOf(progressPercentage));
@@ -248,6 +248,11 @@ public class progressShow extends AppCompatActivity {
         });
 
 
+    }
+
+    public static int calcPercentage(int savedCurrentPage, int savedTotalPages) {
+        int progressPercentage = Math.round(((float)savedCurrentPage / savedTotalPages) * 100);
+        return progressPercentage;
     }
 
     private void saveData(String bookName_txt, String totalPages_txt, String currentPge_txt) {

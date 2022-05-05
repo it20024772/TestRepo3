@@ -154,7 +154,7 @@ public class reviewShow extends AppCompatActivity {
                     count += 1;
                 }
 
-                avgRate = totRate / count;
+                avgRate = calcAvgRate(totRate, count);
                 avgRatingtxt.setText(Float.toString(avgRate));
 
                 reviewListAdapter.notifyDataSetChanged();
@@ -168,6 +168,14 @@ public class reviewShow extends AppCompatActivity {
 
             }
         });
+    }
+
+    public static float calcAvgRate(float totRate, int count) {
+        float avgRate = 0;
+        avgRate = totRate / count;
+
+        double roundOff = (double) Math.round(avgRate * 100) / 100;
+        return (float) roundOff;
     }
 
     private void buildRecyclerView() {

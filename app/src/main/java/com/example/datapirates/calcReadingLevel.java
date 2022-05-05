@@ -32,10 +32,6 @@ public class calcReadingLevel extends AppCompatActivity {
         calculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int letters = 0;
-                int words = 0;
-                int sentences = 0;
-
                 edtExtract = findViewById(R.id.edtSentences);
 
                 String Extract_txt = edtExtract.getText().toString();
@@ -44,42 +40,16 @@ public class calcReadingLevel extends AppCompatActivity {
                     Toast.makeText(calcReadingLevel.this, "Enter several sentences from book", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    for (int i=0; i < Extract_txt.length(); i++){
-                        char c = Extract_txt.charAt(i);
+                    String bookGrade = calculateGrade(Extract_txt);
 
-                        if (c == '.' || c == '!' || c== '?'){
-                            sentences += 1;
-                        }
-                        else if(c == ' '){
-                            words += 1;
-                        }
-                        else if (Character.isLetter(c)){
-                            letters += 1;
-                        }
-                    }
-                    words += 1;
-                    if (sentences == 0){
+                    if (bookGrade.equals("")){
                         Toast.makeText(calcReadingLevel.this, "Enter at least one sentence", Toast.LENGTH_SHORT).show();
                     }
-                    else {
-                        float L = ((float) letters / words) * 100; // letters per hundred words
-                        float S = ((float) sentences / words) * 100; // sentences per hundred words
-
-                        long index =  Math.round(0.0588 * L - 0.296 * S - 15.8);
-
-                        if (index >= 16){
-                            gradeTxt.setText("Grade 16+");
-                        }
-                        else if (index < 1){
-                            gradeTxt.setText("Before Grade 1");
-                        }
-                        else {
-                            gradeTxt.setText("Grade " + index);
-                        }
-
+                    else{
+                        gradeTxt.setText(bookGrade);
                         Toast.makeText(calcReadingLevel.this, "Grade Calculated", Toast.LENGTH_SHORT).show();
-
                     }
+
 
 
                 }
@@ -99,4 +69,50 @@ public class calcReadingLevel extends AppCompatActivity {
         });
 
     }
+
+    public static String calculateGrade(String Extract_txt) {
+        int letters = 0;
+        int words = 0;
+        int sentences = 0;
+        String grade = "";
+
+        for (int i=0; i < Extract_txt.length(); i++){
+            char c = Extract_txt.charAt(i);
+
+            if (c == '.' || c == '!' || c== '?'){
+                sentences += 1;
+            }
+            else if(c == ' '){
+                words += 1;
+            }
+            else if (Character.isLetter(c)){
+                letters += 1;
+            }
+        }
+        words += 1;
+        if (sentences == 0){
+            return "";
+        }
+        else {
+            float L = ((float) letters / words) * 100; // letters per hundred words
+            float S = ((float) sentences / words) * 100; // sentences per hundred words
+
+            long index =  Math.round(0.0588 * L - 0.296 * S - 15.8); // coleman-liau index
+
+            if (index >= 16){
+                grade = "Grade 16+";
+            }
+            else if (index < 1){
+                grade = "Before Grade 1";
+            }
+            else {
+                grade = "Grade " + index;
+            }
+
+        }
+
+        return grade;
+    }
+
+
 }
