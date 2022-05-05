@@ -10,5 +10,8 @@ public class averageReviewRatingTest {
     public void averageRatingTest(){
         float result = reviewShow.calcAvgRate(8, 2);
         assertEquals(4, result, 0);
+
+        result = reviewShow.calcAvgRate(15, 3);
+        assertEquals(5, result, 0);
     }
 }
